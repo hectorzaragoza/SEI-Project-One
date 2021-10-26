@@ -8,7 +8,8 @@
     //Get our canvas element via the id
     const canvas = document.getElementById('canvasArea');
     const h1 = document.getElementById('heading')
-    //
+    //def health counter
+    const healthCounter = document.getElementById('healthCounter')
 
 
     //Set the dimensions of the canvas area to be responsive by using getComputedStyle
@@ -51,13 +52,59 @@
 
     //Create objects: Player, Hazard, Two Establishments
     const player = new Objects(25,105,10,10, 'red')
-    const healthUp = new Objects (600,50,40,40, 'green')
-    const healthDown = new Objects (600,150,40,40, 'red')
+    const healthUp = new Objects (canvas.width - 50,50,40,40, 'green')
+    const healthDown = new Objects (canvas.width - 50,150,40,40, 'red')
     const safety = new Objects (10,90,40,40, 'blue')
     const hazard = new Objects(100,250,15,15,'red')
     // //Test that render method works
     // player.render()
     // hazard.render()
+    
+    //Define actions that affect Health Counter
+    //There are two kinds of objects, Blue and Green restore health
+    //getting hit by moving objects kills the character.
+    //We can include both in one function
+    //let's start with taking away health if you get hit by a target.
+    healthCounter.innerHTML = 100
+    const detectHit = () => {
+        if (
+            player.x < safety.x + safety.width &&
+            player.x + player.width > safety.x &&
+            player.y < safety.y + safety.height &&
+            player.y + player.height > safety.y 
+        ) {
+            healthCounter.innerHTML = 100
+        } else if (
+            player.x < hazard.x + hazard.width &&
+            player.x + player.width > hazard.x &&
+            player.y < hazard.y + hazard.height &&
+            player.y + player.height > hazard.y 
+        ) {
+            healthCounter.innerHTML -= 10
+        } else if (
+            player.x < healthUp.x + healthUp.width &&
+            player.x + player.width > healthUp.x &&
+            player.y < healthUp.y + healthUp.height &&
+            player.y + player.height > healthUp.y
+        ) {
+            healthCounter.innerHTML += 1
+        } else if (
+            player.x < healthDown.x + healthDown.width &&
+            player.x + player.width > healthDown.x &&
+            player.y < healthDown.y + healthDown.height &&
+            player.y + player.height > healthDown.y
+        ) {
+            healthCounter.innerHTML += 1
+        } else if (
+            !(player.x < safety.x + safety.width &&
+            player.x + player.width > safety.x &&
+            player.y < safety.y + safety.height &&
+            player.y + player.height > safety.y) 
+        ) {
+            healthCounter.innerHTML -= 1
+        }
+    }
+
 
     //We need to control the movement of our player using the WASD keys in 
     //addition to keeping the player moving out side the canvas.
@@ -91,7 +138,7 @@
     } 
     
 
-    document.addEventListener('keydown', moveControl)
+
 
     //Build a function that will loop and update the x,y, coordinates
     //of my player to render moevement using the moveControl function
@@ -103,14 +150,15 @@
         healthUp.render()
         healthDown.render()
         if(hazard.y > 0) {
-            hazard.y -= 20
+            hazard.y -= 10
             hazard.render()
         } else {
             hazard.y = 250
         }
+        detectHit()
     }
 
-    let gameInterval = setInterval(gameLoop, 70)
+    let gameInterval = setInterval(gameLoop, 100)
 
     //I need to have an object go from outside the canvas, bottom up, automatically
     //at a set rate.
@@ -120,5 +168,4 @@
     //      are used to manipulate movement)
 
         
-        
-    
+    document.addEventListener('keydown', moveControl)
