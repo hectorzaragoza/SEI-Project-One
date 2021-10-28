@@ -97,6 +97,9 @@
             let createWin = document.createElement('h2')
             createWin.innerText = "You made it!"
             document.querySelector('p').appendChild(createWin)
+            let breakEl = document.createElement('br')
+            document.querySelector('h2').appendChild(breakEl)
+            resetButton()
         }
     }
 //  2. Be "Home" 
@@ -110,9 +113,23 @@ const stopGame = () => {
         createEnd.setAttribute('id', "gameOver")
         createEnd.innerText = "Game Over!"
         document.querySelector('p').appendChild(createEnd)
+        //create a br element to seporate display and reset button
+        let breakEl = document.createElement('br')
+        document.querySelector('h2').appendChild(breakEl)
+        resetButton()
     }
 }
 
+//create a reset button to reload the document and start over
+const resetButton = () => {
+    let startOver = document.createElement('button')
+    startOver.setAttribute('type', 'button');
+    startOver.innerText = 'Reset'
+    document.querySelector('h2').appendChild(startOver)
+    startOver.addEventListener('click', () => {
+        window.location.reload()
+    })
+}
 
     //let's start with taking away health if you get hit by a target.
     healthCounter.innerText = 200
