@@ -55,6 +55,7 @@
     const thePark = new Objects (canvas.width-40,canvas.height-250,40,60, 'green')
     const theBeach = new Objects (canvas.width-40,canvas.height-155,40,60, 'lightblue')
     const theBar = new Objects (canvas.width-40,canvas.height-60,40,60, 'darkred')
+    const endZone = new Objects (canvas.width-55,canvas.height-250,2,250, 'black')
     const safety = new Objects (10,90,40,40, 'blue')
     const hazard = new Objects(100,250,15,15,'red')
     const secondHazard = new Objects(150,300,20,20, 'black')
@@ -79,6 +80,40 @@
     //There are two kinds of objects, Blue and Green restore health
     //getting hit by moving objects kills the character.
     //We can include both in one function
+    //Win condition
+//The player must visit at least one of the three locations and make it back home before the health bar reaches 0.
+//Conditions: 
+//  1. Player surface area must touch the end zone
+    let winCon = false
+//  &&
+    const winGame = () => {
+        if(winCon && (
+            player.x < safety.x + safety.width &&
+            player.x + player.width > safety.x &&
+            player.y < safety.y + safety.height &&
+            player.y + player.height > safety.y 
+        )) {
+            clearInterval(gameInterval)
+            let createWin = document.createElement('h2')
+            createWin.innerText = "You made it!"
+            document.querySelector('p').appendChild(createWin)
+        }
+    }
+//  2. Be "Home" 
+
+//Stop condition
+//When the health counter reaches 0, an h2 element that displays "Game Over!" is created and appended to the h1 heading and the game loop is stopped using clearInterval.
+const stopGame = () => {
+    if (healthCounter.innerText == 0) {
+        clearInterval(gameInterval)
+        let createEnd = document.createElement('h2')
+        createEnd.setAttribute('id', "gameOver")
+        createEnd.innerText = "Game Over!"
+        document.querySelector('p').appendChild(createEnd)
+    }
+}
+
+
     //let's start with taking away health if you get hit by a target.
     healthCounter.innerText = 200
     const detectHit = () => {
@@ -195,6 +230,13 @@
         ) {
             healthCounter.innerText -= 5
         } else if (
+            player.x < endZone.x + endZone.width &&
+            player.x + player.width > endZone.x &&
+            player.y < endZone.y + endZone.height &&
+            player.y + player.height > endZone.y 
+        ) {
+            winCon = true
+        } else if (
             player.x < thePark.x + thePark.width &&
             player.x + player.width > thePark.x &&
             player.y < thePark.y + thePark.height &&
@@ -271,17 +313,7 @@
         }
     } 
     
-//Stop condition
-const stopGame = () => {
-    if (healthCounter.innerText == 0) {
-        console.log('im in')
-        clearInterval(gameInterval)
-        let createEnd = document.createElement('h2')
-        createEnd.setAttribute('id', "gameOver")
-        createEnd.innerText = "Game Over!"
-        document.querySelector('p').appendChild(createEnd)
-    }
-}
+
 
 
     //Build a function that will loop and update the x,y, coordinates
@@ -289,12 +321,13 @@ const stopGame = () => {
     const gameLoop = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         moveControl.innerContent = `X: ${player.x}\nY: ${player.y}`
+        endZone.render()
         safety.render()
         thePark.render()
         theBeach.render()
         theBar.render()
         player.render()
-        
+        console.log(winCon)
         if(hazard.y > 0) {
             hazard.y -= 10
             hazard.render()
@@ -390,6 +423,7 @@ const stopGame = () => {
             fifteenthHazard.y = -20
         }
         detectHit()
+        winGame()
         stopGame()
         
     }
