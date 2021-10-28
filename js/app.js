@@ -52,10 +52,25 @@
 
     //Create objects: Player, Hazard, Two Establishments
     const player = new Objects(25,105,10,10, 'red')
-    const healthUp = new Objects (canvas.width - 50,50,40,40, 'green')
-    const healthDown = new Objects (canvas.width - 50,150,40,40, 'red')
+    const thePark = new Objects (canvas.width-40,canvas.height-250,40,60, 'green')
+    const theBeach = new Objects (canvas.width-40,canvas.height-155,40,60, 'lightblue')
+    const theBar = new Objects (canvas.width-40,canvas.height-60,40,60, 'darkred')
     const safety = new Objects (10,90,40,40, 'blue')
     const hazard = new Objects(100,250,15,15,'red')
+    const secondHazard = new Objects(150,300,20,20, 'black')
+    const thirdHazard = new Objects(195,-20,10,10, 'brown')
+    const fourthHazard = new Objects(215,-40,10,10, 'brown')
+    const fifthHazard = new Objects(250,300,35,35, 'grey')
+    const sixthHazard = new Objects(300,400,15,15, 'yellow')
+    const seventhHazard = new Objects(340,-10,10,10, 'brown')
+    const eigthHazard = new Objects(370,-60,10,10, 'brown')
+    const ninthHazard = new Objects(420,400,15,15, 'pink')
+    const tenthHazard = new Objects(450,-10,10,10, 'aqua')
+    const eleventhHazard = new Objects(500,-60,10,10, 'purple')
+    const twelfthHazard = new Objects(550,-60,10,10, 'gold')
+    const thirteenthHazard = new Objects(600,-60,10,10, 'gray')
+    const fourteenthHazard = new Objects(525,300,10,10, 'blue')
+    const fifteenthHazard = new Objects(575,300,10,10, 'red')
     // //Test that render method works
     // player.render()
     // hazard.render()
@@ -65,7 +80,7 @@
     //getting hit by moving objects kills the character.
     //We can include both in one function
     //let's start with taking away health if you get hit by a target.
-    healthCounter.innerHTML = 100
+    healthCounter.innerText = 200
     const detectHit = () => {
         if (
             player.x < safety.x + safety.width &&
@@ -73,37 +88,156 @@
             player.y < safety.y + safety.height &&
             player.y + player.height > safety.y 
         ) {
-            healthCounter.innerHTML = 100
+            healthCounter.innerText = 200
         } else if (
             player.x < hazard.x + hazard.width &&
             player.x + player.width > hazard.x &&
             player.y < hazard.y + hazard.height &&
             player.y + player.height > hazard.y 
         ) {
-            healthCounter.innerHTML -= 10
+            healthCounter.innerText -= 5
         } else if (
-            player.x < healthUp.x + healthUp.width &&
-            player.x + player.width > healthUp.x &&
-            player.y < healthUp.y + healthUp.height &&
-            player.y + player.height > healthUp.y
+            player.x < secondHazard.x + secondHazard.width &&
+            player.x + player.width > secondHazard.x &&
+            player.y < secondHazard.y + secondHazard.height &&
+            player.y + player.height > secondHazard.y 
         ) {
-            healthCounter.innerHTML += 1
+            healthCounter.innerText -= 10
         } else if (
-            player.x < healthDown.x + healthDown.width &&
-            player.x + player.width > healthDown.x &&
-            player.y < healthDown.y + healthDown.height &&
-            player.y + player.height > healthDown.y
+            player.x < thirdHazard.x + thirdHazard.width &&
+            player.x + player.width > thirdHazard.x &&
+            player.y < thirdHazard.y + thirdHazard.height &&
+            player.y + player.height > thirdHazard.y 
         ) {
-            healthCounter.innerHTML += 1
+            healthCounter.innerText -= 5
+        } else if (
+            player.x < fourthHazard.x + fourthHazard.width &&
+            player.x + player.width > fourthHazard.x &&
+            player.y < fourthHazard.y + fourthHazard.height &&
+            player.y + player.height > fourthHazard.y 
+        ) {
+            healthCounter.innerText -= 5
+        } else if (
+            player.x < fifthHazard.x + fifthHazard.width &&
+            player.x + player.width > fifthHazard.x &&
+            player.y < fifthHazard.y + fifthHazard.height &&
+            player.y + player.height > fifthHazard.y 
+        ) {
+            healthCounter.innerText -= 15
+        } else if (
+            player.x < sixthHazard.x + sixthHazard.width &&
+            player.x + player.width > sixthHazard.x &&
+            player.y < sixthHazard.y + sixthHazard.height &&
+            player.y + player.height > sixthHazard.y 
+        ) {
+            healthCounter.innerText -= 5
+        } else if (
+            player.x < seventhHazard.x + seventhHazard.width &&
+            player.x + player.width > seventhHazard.x &&
+            player.y < seventhHazard.y + seventhHazard.height &&
+            player.y + player.height > seventhHazard.y 
+        ) {
+            healthCounter.innerText -= 5
+        } else if (
+            player.x < eigthHazard.x + eigthHazard.width &&
+            player.x + player.width > eigthHazard.x &&
+            player.y < eigthHazard.y + eigthHazard.height &&
+            player.y + player.height > eigthHazard.y 
+        ) {
+            healthCounter.innerText -= 5
+        } else if (
+            player.x < ninthHazard.x + ninthHazard.width &&
+            player.x + player.width > ninthHazard.x &&
+            player.y < ninthHazard.y + ninthHazard.height &&
+            player.y + player.height > ninthHazard.y 
+        ) {
+            healthCounter.innerText -= 5
+        } else if (
+            player.x < tenthHazard.x + tenthHazard.width &&
+            player.x + player.width > tenthHazard.x &&
+            player.y < tenthHazard.y + tenthHazard.height &&
+            player.y + player.height > tenthHazard.y 
+        ) {
+            healthCounter.innerText -= 5
+        } else if (
+            player.x < eleventhHazard.x + eleventhHazard.width &&
+            player.x + player.width > eleventhHazard.x &&
+            player.y < eleventhHazard.y + eleventhHazard.height &&
+            player.y + player.height > eleventhHazard.y 
+        ) {
+            healthCounter.innerText -= 5
+        } else if (
+            player.x < twelfthHazard.x + twelfthHazard.width &&
+            player.x + player.width > twelfthHazard.x &&
+            player.y < twelfthHazard.y + twelfthHazard.height &&
+            player.y + player.height > twelfthHazard.y 
+        ) {
+            healthCounter.innerText -= 5
+        } else if (
+            player.x < thirteenthHazard.x + thirteenthHazard.width &&
+            player.x + player.width > thirteenthHazard.x &&
+            player.y < thirteenthHazard.y + thirteenthHazard.height &&
+            player.y + player.height > thirteenthHazard.y 
+        ) {
+            healthCounter.innerText -= 5
+        } else if (
+            player.x < fourteenthHazard.x + fourteenthHazard.width &&
+            player.x + player.width > fourteenthHazard.x &&
+            player.y < fourteenthHazard.y + fourteenthHazard.height &&
+            player.y + player.height > fourteenthHazard.y 
+        ) {
+            healthCounter.innerText -= 5
+        } else if (
+            player.x < fifteenthHazard.x + fifteenthHazard.width &&
+            player.x + player.width > fifteenthHazard.x &&
+            player.y < fifteenthHazard.y + fifteenthHazard.height &&
+            player.y + player.height > fifteenthHazard.y 
+        ) {
+            healthCounter.innerText -= 5
+        } else if (
+            player.x < thePark.x + thePark.width &&
+            player.x + player.width > thePark.x &&
+            player.y < thePark.y + thePark.height &&
+            player.y + player.height > thePark.y
+        ) { if(healthCounter.innerText < 200){
+            healthCounter.innerText = Number(healthCounter.innerText) + 1
+        } else {
+            healthCounter.innerText = 200
+        }
+        } else if (
+            player.x < theBeach.x + theBeach.width &&
+            player.x + player.width > theBeach.x &&
+            player.y < theBeach.y + theBeach.height &&
+            player.y + player.height > theBeach.y
+        ) { if(healthCounter.innerText < 200){
+            healthCounter.innerText = Number(healthCounter.innerText) + 2
+        } else {
+            healthCounter.innerText = 200
+        }
+        } else if (
+            player.x < theBar.x + theBar.width &&
+            player.x + player.width > theBar.x &&
+            player.y < theBar.y + theBar.height &&
+            player.y + player.height > theBar.y
+        ) { if(healthCounter.innerText < 200){
+            healthCounter.innerText = Number(healthCounter.innerText) - 1
+            healthCounter.innerText = Number(healthCounter.innerText) 
+        } else {
+            healthCounter.innerText = 200
+        }
         } else if (
             !(player.x < safety.x + safety.width &&
             player.x + player.width > safety.x &&
             player.y < safety.y + safety.height &&
             player.y + player.height > safety.y) 
         ) {
-            healthCounter.innerHTML -= 1
+            if(healthCounter.innerText > 0){
+                healthCounter.innerText -= 1
+        } else {
+            healthCounter.innerText = 0
         }
     }
+}
 
 
     //We need to control the movement of our player using the WASD keys in 
@@ -137,7 +271,17 @@
         }
     } 
     
-
+//Stop condition
+const stopGame = () => {
+    if (healthCounter.innerText == 0) {
+        console.log('im in')
+        clearInterval(gameInterval)
+        let createEnd = document.createElement('h2')
+        createEnd.setAttribute('id', "gameOver")
+        createEnd.innerText = "Game Over!"
+        document.querySelector('p').appendChild(createEnd)
+    }
+}
 
 
     //Build a function that will loop and update the x,y, coordinates
@@ -146,26 +290,117 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         moveControl.innerContent = `X: ${player.x}\nY: ${player.y}`
         safety.render()
+        thePark.render()
+        theBeach.render()
+        theBar.render()
         player.render()
-        healthUp.render()
-        healthDown.render()
+        
         if(hazard.y > 0) {
             hazard.y -= 10
             hazard.render()
         } else {
             hazard.y = 250
         }
+
+        if(secondHazard.y > 0) {
+            secondHazard.y -= 20
+            secondHazard.render()
+        } else {
+            secondHazard.y = 300
+        }
+        if(thirdHazard.y < 300) {
+            thirdHazard.y = Number(thirdHazard.y) + 10
+            thirdHazard.render()
+        } else {
+            thirdHazard.y = -20
+        }
+        if(fourthHazard.y < 300) {
+            fourthHazard.y = Number(fourthHazard.y) + 15
+            fourthHazard.render()
+        } else {
+            fourthHazard.y = -20
+        }
+
+        if(fifthHazard.y > 0) {
+            fifthHazard.y -= 10
+            fifthHazard.render()
+        } else {
+            fifthHazard.y = 500
+        }
+        if(sixthHazard.y > 0) {
+            sixthHazard.y -= 10
+            sixthHazard.render()
+        } else {
+            sixthHazard.y = 500
+        }
+
+        if(seventhHazard.y < 300) {
+            seventhHazard.y = Number(seventhHazard.y) + 10
+            seventhHazard.render()
+        } else {
+            seventhHazard.y = -20
+        }
+        if(eigthHazard.y < 300) {
+            eigthHazard.y = Number(eigthHazard.y) + 20
+            eigthHazard.render()
+        } else {
+            eigthHazard.y = -20
+        }
+        if(ninthHazard.y > 0) {
+            ninthHazard.y -= 30
+            ninthHazard.render()
+        } else {
+            ninthHazard.y = 500
+        }
+        if(tenthHazard.y < 300) {
+            tenthHazard.y = Number(tenthHazard.y) + 15
+            tenthHazard.render()
+        } else {
+            tenthHazard.y = -20
+        } 
+        
+        if(eleventhHazard.y > 0) {
+            eleventhHazard.y -= 30
+            eleventhHazard.render()
+        } else {
+            eleventhHazard.y = 500
+        }
+        if(twelfthHazard.y > 0) {
+            twelfthHazard.y -= 30
+            twelfthHazard.render()
+        } else {
+            twelfthHazard.y = 500
+        }
+        if(thirteenthHazard.y > 0) {
+            thirteenthHazard.y -= 30
+            thirteenthHazard.render()
+        } else {
+            thirteenthHazard.y = 500
+        }
+        if(fourteenthHazard.y < 300) {
+            fourteenthHazard.y = Number(fourteenthHazard.y) + 10
+            fourteenthHazard.render()
+        } else {
+            fourteenthHazard.y = -20
+        }
+        if(fifteenthHazard.y < 300) {
+            fifteenthHazard.y = Number(fifteenthHazard.y) + 10
+            fifteenthHazard.render()
+        } else {
+            fifteenthHazard.y = -20
+        }
         detectHit()
+        stopGame()
+        
     }
 
     let gameInterval = setInterval(gameLoop, 100)
-
     //I need to have an object go from outside the canvas, bottom up, automatically
     //at a set rate.
     //I will need: 
     //  1. an object
     //  2. a movement control method (maybe a loop because no keys
     //      are used to manipulate movement)
-
-        
     document.addEventListener('keydown', moveControl)
+
+    
