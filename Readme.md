@@ -6,21 +6,14 @@
 you'll have to **survive** a day in **Mexico City**. (Mix of [The Sims](https://www.youtube.com/watch?v=qqjqPheQvSU) and [Gather Town](https://www.youtube.com/watch?v=8orexZsFRxs))
 
 * evading crazy traffic
-* getting some human contact (but not too close!)
-* treating yourself to some tasty tacos
-* checking out the sights
-* keeping yourself healthy for another day.
+* keeping yourself alive to visit a park, the beach, or a bar.
 
 ## Game Objective:
-* Keep your Health bar above 0 by visiting places that nourish you (Add different amounts of mojo): 
-    - Socialize (but not too close!)
-    - Concert venues
-    - Restaurant
-    - Gyms
+* Keep your Health bar above 0 by visiting places that nourish you: 
     - Park
+    - Beach
     - Concert Venue
 * Avoid Hazards:
-    - Socializing too close to comfort
     - Cyclists
     - Cars
     - Motorcycles
@@ -28,7 +21,6 @@ you'll have to **survive** a day in **Mexico City**. (Mix of [The Sims](https://
 
 * Other "Hazards":
     - Pub
-* Return home before midnight
 
 ## Technical Stack and Requirements:
 * HTML5
@@ -39,16 +31,14 @@ you'll have to **survive** a day in **Mexico City**. (Mix of [The Sims](https://
 ## Minimum Viable Product (MVP):
 
 1. Display a sky view of a town grid image with pathways and establishments
-2. Display Health Bar and Timer
-3. Limit player movement to Walkways/Roads and Establishments
-4. Different Places/Hazards will fill/drain your health bar. 
-5. Display moving hazards at different speeds.
+2. Display Health Bar
+3. Different Places/Hazards will fill/drain your health bar. 
+4. Display moving hazards at different speeds.
 6. Win Conditions
-- Return safely home by Midnight
+- Leave your home and visit a place and return home before your health runs out.
 7. End Game Conditions: 
 - You collide with a Hazard
-- You get too close to someone for too long
-- Your health reaches 0 throughout the day.
+- Your health reaches 0 while you're away from home or a sanctuary.
 
 ![Wireframe](Misc/placeWireframe.JPG)
 

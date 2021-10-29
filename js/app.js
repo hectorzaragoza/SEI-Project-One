@@ -141,111 +141,112 @@ const resetButton = () => {
             player.y + player.height > safety.y 
         ) {
             healthCounter.innerText = 200
+            document.body.style.backgroundColor = 'lightblue'
         } else if (
             player.x < hazard.x + hazard.width &&
             player.x + player.width > hazard.x &&
             player.y < hazard.y + hazard.height &&
             player.y + player.height > hazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < secondHazard.x + secondHazard.width &&
             player.x + player.width > secondHazard.x &&
             player.y < secondHazard.y + secondHazard.height &&
             player.y + player.height > secondHazard.y 
         ) {
-            healthCounter.innerText -= 10
+            healthCounter.innerText = 0
         } else if (
             player.x < thirdHazard.x + thirdHazard.width &&
             player.x + player.width > thirdHazard.x &&
             player.y < thirdHazard.y + thirdHazard.height &&
             player.y + player.height > thirdHazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < fourthHazard.x + fourthHazard.width &&
             player.x + player.width > fourthHazard.x &&
             player.y < fourthHazard.y + fourthHazard.height &&
             player.y + player.height > fourthHazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < fifthHazard.x + fifthHazard.width &&
             player.x + player.width > fifthHazard.x &&
             player.y < fifthHazard.y + fifthHazard.height &&
             player.y + player.height > fifthHazard.y 
         ) {
-            healthCounter.innerText -= 15
+            healthCounter.innerText = 0
         } else if (
             player.x < sixthHazard.x + sixthHazard.width &&
             player.x + player.width > sixthHazard.x &&
             player.y < sixthHazard.y + sixthHazard.height &&
             player.y + player.height > sixthHazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < seventhHazard.x + seventhHazard.width &&
             player.x + player.width > seventhHazard.x &&
             player.y < seventhHazard.y + seventhHazard.height &&
             player.y + player.height > seventhHazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < eigthHazard.x + eigthHazard.width &&
             player.x + player.width > eigthHazard.x &&
             player.y < eigthHazard.y + eigthHazard.height &&
             player.y + player.height > eigthHazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < ninthHazard.x + ninthHazard.width &&
             player.x + player.width > ninthHazard.x &&
             player.y < ninthHazard.y + ninthHazard.height &&
             player.y + player.height > ninthHazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < tenthHazard.x + tenthHazard.width &&
             player.x + player.width > tenthHazard.x &&
             player.y < tenthHazard.y + tenthHazard.height &&
             player.y + player.height > tenthHazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < eleventhHazard.x + eleventhHazard.width &&
             player.x + player.width > eleventhHazard.x &&
             player.y < eleventhHazard.y + eleventhHazard.height &&
             player.y + player.height > eleventhHazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < twelfthHazard.x + twelfthHazard.width &&
             player.x + player.width > twelfthHazard.x &&
             player.y < twelfthHazard.y + twelfthHazard.height &&
             player.y + player.height > twelfthHazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < thirteenthHazard.x + thirteenthHazard.width &&
             player.x + player.width > thirteenthHazard.x &&
             player.y < thirteenthHazard.y + thirteenthHazard.height &&
             player.y + player.height > thirteenthHazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < fourteenthHazard.x + fourteenthHazard.width &&
             player.x + player.width > fourteenthHazard.x &&
             player.y < fourteenthHazard.y + fourteenthHazard.height &&
             player.y + player.height > fourteenthHazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < fifteenthHazard.x + fifteenthHazard.width &&
             player.x + player.width > fifteenthHazard.x &&
             player.y < fifteenthHazard.y + fifteenthHazard.height &&
             player.y + player.height > fifteenthHazard.y 
         ) {
-            healthCounter.innerText -= 5
+            healthCounter.innerText = 0
         } else if (
             player.x < endZone.x + endZone.width &&
             player.x + player.width > endZone.x &&
@@ -260,6 +261,7 @@ const resetButton = () => {
             player.y + player.height > thePark.y
         ) { if(healthCounter.innerText < 200){
             healthCounter.innerText = Number(healthCounter.innerText) + 1
+            document.body.style.backgroundColor = 'forestgreen'
         } else {
             healthCounter.innerText = 200
         }
@@ -270,6 +272,7 @@ const resetButton = () => {
             player.y + player.height > theBeach.y
         ) { if(healthCounter.innerText < 200){
             healthCounter.innerText = Number(healthCounter.innerText) + 2
+            document.body.style.backgroundColor = 'aqua'
         } else {
             healthCounter.innerText = 200
         }
@@ -280,7 +283,8 @@ const resetButton = () => {
             player.y + player.height > theBar.y
         ) { if(healthCounter.innerText < 200){
             healthCounter.innerText = Number(healthCounter.innerText) - 1
-            healthCounter.innerText = Number(healthCounter.innerText) 
+            healthCounter.innerText = Number(healthCounter.innerText)
+            document.body.style.backgroundColor = 'darkred' 
         } else {
             healthCounter.innerText = 200
         }
@@ -292,6 +296,7 @@ const resetButton = () => {
         ) {
             if(healthCounter.innerText > 0){
                 healthCounter.innerText -= 1
+                document.body.style.backgroundColor = 'rgb(230, 210, 185)'
         } else {
             healthCounter.innerText = 0
         }
