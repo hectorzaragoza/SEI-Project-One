@@ -2,6 +2,8 @@
 Sign Commit Test
 ![Cartoon Town](Misc/pantown.JPG)
 
+Live Deployment: https://hectorzaragoza.github.io/SEI-Project-One/
+
 ## In this game,
 you'll have to **survive** a day in **Mexico City**. (Mix of [The Sims](https://www.youtube.com/watch?v=qqjqPheQvSU) and [Gather Town](https://www.youtube.com/watch?v=8orexZsFRxs))
 
